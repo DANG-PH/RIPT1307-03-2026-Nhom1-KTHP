@@ -41,7 +41,7 @@ HDG là một công ty (môi trường giả định trong bài tập lớn) bao
 | | Phạm Hải Đăng | Lê Đình Thành | Lê Xuân Dũng |
 |---|---|---|---|
 | **Dự án** | Ngọc Rồng Online Platform | HDG Admin & HR System | HDG Healthcare Management |
-| **Ngôn ngữ chính** | TypeScript (NestJS) · Go · Java (LibGDX) | TypeScript / JavaScript | Python (FastAPI) |
+| **Ngôn ngữ chính** | TypeScript (NestJS/NextJS) · Golang · Java (LibGDX) | TypeScript(NextJS/React Native) JavaScript(ExpressJS) | TypeScript(React) Python (FastAPI) |
 | **Hạ tầng** | Multi-VPS · Docker · Nginx · Cloudflare | Tận dụng backend HDG + tự dev service | Độc lập, giao diện người dùng riêng |
 | **Role** | Full Stack Engineer · BA · DevOps | Full Stack · Mobile/Android Dev | Backend · Frontend |
 
