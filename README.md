@@ -75,7 +75,7 @@ HDG là một công ty (môi trường giả định trong bài tập lớn) bao
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
 > **Role:** Full Stack Engineer · Business Analyst · DevSecOps · QA (Server) · SRE · Solution Architect
-
+>
 > **Ngôn ngữ:** TypeScript (NestJS) · Golang · Java (LibGDX)
 
 ### Tổng quan
