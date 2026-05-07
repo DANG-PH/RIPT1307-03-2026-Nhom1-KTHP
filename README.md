@@ -74,7 +74,8 @@ HDG là một công ty (môi trường giả định trong bài tập lớn) bao
 
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
-> **Role:** Full Stack Engineer · BA · DevSecOps · QA (Server) · SRE · Solution Architect
+> **Role:** Full Stack Engineer · Business Analyst · DevSecOps · QA (Server) · SRE · Solution Architect
+> 
 > **Ngôn ngữ:** TypeScript (NestJS) · Golang · Java (LibGDX)
 
 ### Tổng quan
@@ -262,7 +263,8 @@ Tầng 5: Database — Isolated per-service, network segmentation
 
 ## Lê Đình Thành — HDG Admin & HR System
 
-> **Role:** Full Stack Engineer · Mobile Developer · Business Analyst   
+> **Role:** Full Stack Engineer · Mobile Developer · Business Analyst
+>  
 > **Ngôn ngữ:** TypeScript(NextJS/React Native) · JavaScript(ExpressJS)
 
 ### Tổng quan
@@ -281,6 +283,7 @@ Lê Đình Thành xây dựng hệ thống **quản trị nội bộ và quản 
 ## Lê Xuân Dũng — HDG Healthcare Management
 
 > **Role:** Backend Developer · Frontend Developer · Business Analyst · QA (Client)
+> 
 > **Ngôn ngữ:** TypeScript(React) · Python (FastAPI)
 
 ### Tổng quan
