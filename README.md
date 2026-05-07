@@ -43,7 +43,7 @@ HDG là một công ty (môi trường giả định trong bài tập lớn) bao
 | **Dự án** | Ngọc Rồng Online Platform | HDG Admin & HR System | HDG Healthcare Management |
 | **Ngôn ngữ chính** | TypeScript (NestJS/NextJS) · Golang · Java (LibGDX) | TypeScript(NextJS/React Native) JavaScript(ExpressJS) | TypeScript(React) Python (FastAPI) |
 | **Hạ tầng** | Multi-VPS · Docker · Nginx · Cloudflare | Tận dụng backend HDG + tự dev service | Độc lập, giao diện người dùng riêng |
-| **Role** | Full Stack · BA · DevSecOps · QA · SRE · Architect | Full Stack · BA · Mobile/Android Dev | Full Stack · BA · QA |
+| **Role** | Full Stack · BA · DevSecOps & SRE · QA | Full Stack · BA · Mobile/Android Dev | Full Stack · BA · QA |
 
 > Mỗi thành viên làm việc độc lập nhưng cùng đóng góp vào **một hệ sinh thái chung** — thể hiện cả khả năng cá nhân lẫn tư duy làm việc nhóm theo hướng phân tán.
 
