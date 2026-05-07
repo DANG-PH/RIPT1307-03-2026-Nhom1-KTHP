@@ -85,17 +85,17 @@ Tái hiện game MMORPG Ngọc Rồng Online — gồm game client, web platform
 
 | Repo | Mô tả |
 |---|---|
-| [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | Cổng vào duy nhất của hệ thống — routing, auth middleware, rate limiting, distributed tracing, observability và bảo mật tầng application. |
-| [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | Xác thực người dùng — OTP 2FA, Google OAuth, JWT refresh + token versioning; phát Redis pub/sub event khi token bị revoke để các service đồng bộ realtime. |
-| [dragonboy-user-service](https://github.com/DANG-PH/dragonboy-user-service) | Quản lý player — profile, game state, in-game economy (gold & gems), inventory, leaderboard; cache hot data trên Redis. |
-| [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | Business logic game phức tạp và stateful game events; nhận event từ Go service qua NATS, xử lý nghiệp vụ rồi persist xuống DB. |
-| [dragonboy-game-data-service](https://github.com/DANG-PH/dragonboy-game-data-service) | Master data tĩnh của game — maps, NPCs, item definitions, NPC shops; cache toàn bộ trên Redis, source of truth cho các service khác. |
-| [dragonboy-item-service](https://github.com/DANG-PH/dragonboy-item-service) | Quản lý inventory — CRUD vật phẩm, bulk insert, UUID lookup, item swap với optimistic locking và database indexing tối ưu. |
-| [dragonboy-pay-service](https://github.com/DANG-PH/dragonboy-pay-service) | Ví người chơi — nạp tiền QR (PayOS), idempotency-safe balance update, lịch sử giao dịch, phát event thanh toán lên RabbitMQ để xử lý async. |
-| [dragonboy-social-network-service](https://github.com/DANG-PH/dragonboy-social-network-service) | Mạng xã hội trong game — bạn bè, private chat, group room, threaded comment + like; push thông báo realtime qua Redis pub/sub. |
-| [dragonboy-queue-service](https://github.com/DANG-PH/dragonboy-queue-service) | Consumer xử lý async qua RabbitMQ — gửi email (single & bulk), item sync/swap, dead-letter queue và retry logic, hỗ trợ horizontal scaling. |
-| [dragonboy-disciple-service](https://github.com/DANG-PH/dragonboy-disciple-service) | Hệ thống đệ tử — tạo đệ tử, power tracking, persist trạng thái game theo từng player; expose nội bộ qua Protocol Buffers. |
-| [dragonboy-admin-service](https://github.com/DANG-PH/dragonboy-admin-service) | Vận hành nội bộ — phân quyền RBAC (editor / cashier / marketplace), quản lý tài chính, partner workflows, audit log. |
+| [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | Cổng vào duy nhất của hệ thống — routing, auth middleware, rate limiting, observability, bảo mật tầng application. |
+| [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | Xác thực người dùng — OTP 2FA, Google OAuth, JWT refresh, token versioning, admin user control. |
+| [dragonboy-user-service](https://github.com/DANG-PH/dragonboy-user-service) | Quản lý player — profile, game state, in-game economy (gold & gems), inventory, leaderboard. |
+| [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | Business logic game phức tạp, stateful game events, phối hợp với Go service xử lý real-time. |
+| [dragonboy-game-data-service](https://github.com/DANG-PH/dragonboy-game-data-service) | Master data tĩnh của game — maps, NPCs, item definitions, NPC shops. Source of truth cho toàn hệ thống. |
+| [dragonboy-item-service](https://github.com/DANG-PH/dragonboy-item-service) | Quản lý inventory — CRUD vật phẩm, bulk insert, UUID lookup, item swap, database indexing tối ưu. |
+| [dragonboy-pay-service](https://github.com/DANG-PH/dragonboy-pay-service) | Ví người chơi — nạp tiền QR (PayOS), idempotency-safe balance, lịch sử giao dịch, analytics admin. |
+| [dragonboy-social-network-service](https://github.com/DANG-PH/dragonboy-social-network-service) | Mạng xã hội trong game — bạn bè, chat riêng, group, comment thread, like, thông báo realtime. |
+| [dragonboy-queue-service](https://github.com/DANG-PH/dragonboy-queue-service) | Xử lý async qua RabbitMQ — gửi email, bulk mail, item sync/swap, retry logic, horizontal scaling. |
+| [dragonboy-disciple-service](https://github.com/DANG-PH/dragonboy-disciple-service) | Hệ thống đệ tử — tạo đệ tử, theo dõi sức mạnh, lưu trạng thái game theo player. |
+| [dragonboy-admin-service](https://github.com/DANG-PH/dragonboy-admin-service) | Vận hành nội bộ — phân quyền RBAC (editor/cashier/marketplace), tài chính, partner workflows. |
 
 **Server — Golang (1 service)**
 
