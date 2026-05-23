@@ -48,7 +48,7 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · SCSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
+| **Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Taiwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
 | **NestJS** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · Lua | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
 | | [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | TypeScript | Auth — OTP 2FA, Google OAuth, JWT versioning |
