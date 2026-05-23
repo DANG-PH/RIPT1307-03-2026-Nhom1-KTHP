@@ -34,9 +34,11 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
+> **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer  
 > **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare  
 > **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7  
-> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)
+> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md) \
+> **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
 
 Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực tế qua VietQR/PayOS (webhook + idempotency), chatbot RAG hỏi đáp tài liệu game (Gemini embedding + LLM), và hạ tầng phân tán tự vận hành trên 3 VPS. Kiến trúc microservices 14 service giao tiếp qua gRPC + event-driven (RabbitMQ), giao dịch liên-service đảm bảo nhất quán bằng Saga + Outbox Pattern. Bảo mật theo mô hình Defense in Depth (Cloudflare → Nginx → API Gateway → App → DB), xác thực hai lớp (mật khẩu + OTP email), JWT versioning. CI/CD tự động qua YAML với health check + auto rollback, monitoring Prometheus/Grafana, distributed tracing Jaeger, backup định kỳ lên Google Drive, alerting Discord/Telegram. Đã kiểm thử stress test và soak test thực tế.
 
@@ -48,18 +50,18 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 |---|---|---|---|
 | **Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · SCSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
-| **NestJS** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · LuaScript | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
+| **NestJS** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · Lua | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
 | | [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | TypeScript | Auth — OTP 2FA, Google OAuth, JWT versioning |
 | | [dragonboy-user-service](https://github.com/DANG-PH/dragonboy-user-service) | TypeScript | Player — profile, game stats, inventory, leaderboard |
 | | [dragonboy-pay-service](https://github.com/DANG-PH/dragonboy-pay-service) | TypeScript | Ví — nạp QR (VietQR/PayOS), idempotency, lịch sử giao dịch |
 | | [dragonboy-item-service](https://github.com/DANG-PH/dragonboy-item-service) | TypeScript | Inventory — CRUD vật phẩm, bulk insert, UUID lookup |
 | | [dragonboy-social-network-service](https://github.com/DANG-PH/dragonboy-social-network-service) | TypeScript | Mạng xã hội — bạn bè, chat, group, comment, thông báo |
-| | [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | TypeScript · LuaScript | Game NestJS — stateful events, phối hợp Go realtime |
+| | [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | TypeScript · Lua | Game NestJS — stateful events, phối hợp Go realtime |
 | | [dragonboy-game-data-service](https://github.com/DANG-PH/dragonboy-game-data-service) | TypeScript | Master data — maps, NPCs, items, shops, nhạc nền runtime |
 | | [dragonboy-queue-service](https://github.com/DANG-PH/dragonboy-queue-service) | TypeScript | Async queue — RabbitMQ, email, item sync, retry |
 | | [dragonboy-disciple-service](https://github.com/DANG-PH/dragonboy-disciple-service) | TypeScript | Đệ tử — tạo, theo dõi sức mạnh, trạng thái theo player |
-| | [dragonboy-admin-service](https://github.com/DANG-PH/dragonboy-admin-service) | TypeScript · LuaScript | Admin — RBAC, tài chính, saga mua bán tài khoản |
-| **Golang** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Go · LuaScript | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
+| | [dragonboy-admin-service](https://github.com/DANG-PH/dragonboy-admin-service) | TypeScript | Admin — RBAC, tài chính, saga mua bán tài khoản |
+| **Golang** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Go · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
 | **Infra** | [dragonboy-devops-service](https://github.com/DANG-PH/dragonboy-devops-service) | YAML | CI/CD hub — orchestrate deploy tự động 14 services lên 3 VPS |
 | | [dragonboy-nginx-service](https://github.com/DANG-PH/dragonboy-nginx-service) | Shell | Load balancer, reverse proxy, SSL, Docker Compose |
 | | [dragonboy-db-backups](https://github.com/DANG-PH/dragonboy-db-backups) | SQL | Backup tự động 4 AM — MySQL, PostgreSQL, MongoDB, Redis |
