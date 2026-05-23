@@ -34,11 +34,11 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
-> **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare
-> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7
+> **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare  
+> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7  
 > **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)
 
-Tái hiện game MMORPG Ngọc Rồng Online — game client Java, web platform Next.js, thanh toán VietQR/PayOS, chatbot RAG (Gemini), hạ tầng phân tán 3 VPS. Bảo mật Defense in Depth (Cloudflare → Nginx → Gateway → App → DB), có stress test và soak test thực tế.
+Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực tế qua VietQR/PayOS (webhook + idempotency), chatbot RAG hỏi đáp tài liệu game (Gemini embedding + LLM), và hạ tầng phân tán tự vận hành trên 3 VPS. Kiến trúc microservices 14 service giao tiếp qua gRPC, giao dịch liên-service đảm bảo nhất quán bằng Saga + Outbox Pattern. Bảo mật theo mô hình Defense in Depth (Cloudflare → Nginx → API Gateway → App → DB), xác thực hai lớp (mật khẩu + OTP email), JWT versioning. CI/CD tự động qua GitHub Actions với health check + auto rollback, monitoring Prometheus/Grafana, distributed tracing Jaeger, backup định kỳ lên Google Drive, alerting Discord/Telegram. Đã kiểm thử stress test và soak test thực tế.
 
 **Production:** [ngocrongdark.com](https://ngocrongdark.com) · [api.ngocrongdark.com](https://api.ngocrongdark.com) · [download.ngocrongdark.com](https://download.ngocrongdark.com) · [data.ngocrongdark.com](https://data.ngocrongdark.com) · [redis.ngocrongdark.com](https://redis.ngocrongdark.com) · [grafana.ngocrongdark.com](https://grafana.ngocrongdark.com)
 
@@ -54,16 +54,16 @@ Tái hiện game MMORPG Ngọc Rồng Online — game client Java, web platform 
 | | [dragonboy-pay-service](https://github.com/DANG-PH/dragonboy-pay-service) | TypeScript | Ví — nạp QR (VietQR/PayOS), idempotency, lịch sử giao dịch |
 | | [dragonboy-item-service](https://github.com/DANG-PH/dragonboy-item-service) | TypeScript | Inventory — CRUD vật phẩm, bulk insert, UUID lookup |
 | | [dragonboy-social-network-service](https://github.com/DANG-PH/dragonboy-social-network-service) | TypeScript | Mạng xã hội — bạn bè, chat, group, comment, thông báo |
-| | [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | TypeScript | Game NestJS — stateful events, phối hợp Go realtime |
+| | [dragonboy-game-service](https://github.com/DANG-PH/dragonboy-game-service) | TypeScript · Lua | Game NestJS — stateful events, phối hợp Go realtime |
 | | [dragonboy-game-data-service](https://github.com/DANG-PH/dragonboy-game-data-service) | TypeScript | Master data — maps, NPCs, items, shops, nhạc nền runtime |
 | | [dragonboy-queue-service](https://github.com/DANG-PH/dragonboy-queue-service) | TypeScript | Async queue — RabbitMQ, email, item sync, retry |
 | | [dragonboy-disciple-service](https://github.com/DANG-PH/dragonboy-disciple-service) | TypeScript | Đệ tử — tạo, theo dõi sức mạnh, trạng thái theo player |
 | | [dragonboy-admin-service](https://github.com/DANG-PH/dragonboy-admin-service) | TypeScript | Admin — RBAC, tài chính, saga mua bán tài khoản |
 | **Golang** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Go · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
-| **Infra** | [dragonboy-devops-service](https://github.com/DANG-PH/dragonboy-devops-service) | TypeScript · Shell | CI/CD hub — orchestrate deploy tự động 14 services lên 3 VPS |
-| | [dragonboy-nginx-service](https://github.com/DANG-PH/dragonboy-nginx-service) | Shell · Nginx conf | Load balancer, reverse proxy, SSL, Docker Compose |
-| | [dragonboy-db-backups](https://github.com/DANG-PH/dragonboy-db-backups) | Shell · SQL | Backup tự động 4 AM — MySQL, PostgreSQL, MongoDB, Redis |
-| | [dragonboy-deploy-scripts](https://github.com/DANG-PH/dragonboy-deploy-scripts) | Shell · Bash | Bootstrap VPS mới — Node.js, Go, PM2, UFW, swap, multi-service setup |
+| **Infra** | [dragonboy-devops-service](https://github.com/DANG-PH/dragonboy-devops-service) | GitHub Actions | CI/CD hub — orchestrate deploy tự động 14 services lên 3 VPS |
+| | [dragonboy-nginx-service](https://github.com/DANG-PH/dragonboy-nginx-service) | Shell | Load balancer, reverse proxy, SSL, Docker Compose |
+| | [dragonboy-db-backups](https://github.com/DANG-PH/dragonboy-db-backups) | SQL | Backup tự động 4 AM — MySQL, PostgreSQL, MongoDB, Redis |
+| | [dragonboy-deploy-scripts](https://github.com/DANG-PH/dragonboy-deploy-scripts) | Shell | Bootstrap VPS mới — Node.js, Go, PM2, UFW, swap, multi-service setup |
 
 ---
 
