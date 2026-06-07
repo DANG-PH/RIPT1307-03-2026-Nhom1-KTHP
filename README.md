@@ -72,8 +72,8 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 ## Lê Đình Thành — HDG Admin & HR System
 
 > **Role:** Full Stack · System Designer · BA · QA  
-> **Stack:** TypeScript (Express · React Native / Expo) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Cloudinary  
-> **Quy mô:** 8 repos · 7 microservices · 1 mobile app client
+> **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary  
+> **Quy mô:** 9 repos · 7 microservices · 1 web client · 1 mobile app client
 
 Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG. 
 
@@ -81,12 +81,15 @@ Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào
 
 Hệ thống quản trị Admin cung cấp các tính năng quản lý nhân sự chuyên sâu như phê duyệt đơn đăng ký lịch làm việc (hỗ trợ duyệt hàng loạt), thống kê mật độ làm việc (Heatmap) theo ngày và tuần, cấu hình quy định chấm công/deadline và tạo mã QR chấm công động thời gian thực (giới hạn 30 giây bảo mật tối đa).
 
+**HDG Admin (Web Client)** được phát triển dựa trên **UmiJS** và **Ant Design v5**, tích hợp các chức năng quản trị toàn diện: thống kê tài chính và biểu đồ doanh thu dòng tiền (ApexCharts), phê duyệt yêu cầu rút tiền (cashout), quản lý tin tức (hỗ trợ trình soạn thảo TinyMCE, khóa bài viết), quản lý người chơi (tra cứu profile bằng Auth ID, khóa/mở khóa tài khoản có thời hạn, gửi email hệ thống), và quản lý cấu hình game (NPC spawn, bản đồ, CRUD vật phẩm bán trong shop NPC).
+
 Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập giao tiếp qua API Gateway (định tuyến, proxy WebSocket cho Socket.io và tự động gộp tài liệu Swagger API). Xử lý tác vụ gửi email OTP xác thực tài khoản bất đồng bộ thông qua RabbitMQ và Nodemailer SMTP. Quản lý trạng thái và mã xác thực bảo mật được lưu trữ trong bộ nhớ đệm Redis để tối ưu hóa hiệu năng.
 
 ### Repositories
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
+| **Web Client** | [adminwebnr](https://github.com/lethanh2006/adminwebnr) | TypeScript · UmiJS · Ant Design | Trang quản trị Admin (HDG Admin) - Quản lý người chơi (tra cứu, khóa/mở khóa, gửi email), quản lý tin tức (TinyMCE), quản lý game (bản đồ, NPC, NPC shop), duyệt rút tiền (cashout), và thống kê doanh thu (ApexCharts). |
 | **Mobile Client** | [Nrapp](https://github.com/lethanh2006/Nrapp) | TypeScript · Tailwind CSS | Ứng dụng di động Expo/React Native cho nhân viên và admin - quản lý lịch làm việc, nhiệm vụ (Todo), chat realtime, quét QR chấm công qua camera. |
 | **Backend** | [API-GATEWAY](https://github.com/lethanh2006/API-GATEWAY) | JavaScript | API Gateway - điều phối định tuyến, xử lý proxy Socket.io chat, gộp và phục vụ tài liệu Swagger API tập trung. |
 | | [USER_SERVICE](https://github.com/lethanh2006/USER_SERVICE) | TypeScript | Dịch vụ người dùng & xác thực - đăng ký, đăng nhập, hồ sơ cá nhân (`/me`), phân quyền, xác thực 2 lớp OTP, tích hợp cache Redis. |
