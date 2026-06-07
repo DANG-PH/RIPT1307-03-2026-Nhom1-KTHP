@@ -25,9 +25,9 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 │   (Hải Đăng)     │   │  (Đình Thành)   │   │   (Xuân Dũng)    │
 │ 14 microservices │   │ Web · Mobile    │   │ FastAPI · React  │
 └──────────────────┘   └─────────────────┘   └──────────────────┘
-          │                      │
-          └──────────────────────┘
-             Dùng chung: auth · user · payment
+          │                      │                      │
+          └──────────────────────┴──────────────────────┘
+                   Dùng chung: auth · user · payment
 ```
 
 ---
@@ -37,7 +37,7 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 > **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer  
 > **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare  
 > **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7  
-> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md) \
+> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)  
 > **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
 
 Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực tế qua VietQR/PayOS (webhook + idempotency), chatbot RAG hỏi đáp tài liệu game (Gemini embedding + LLM), và hạ tầng phân tán tự vận hành trên 3 VPS. Kiến trúc microservices 14 service giao tiếp qua gRPC + event-driven (RabbitMQ), giao dịch liên-service đảm bảo nhất quán bằng Saga + Outbox Pattern. Bảo mật theo mô hình Defense in Depth (Cloudflare → Nginx → API Gateway → App → DB), xác thực hai lớp (mật khẩu + OTP email), JWT versioning. CI/CD tự động qua YAML với health check + auto rollback, monitoring Prometheus/Grafana, distributed tracing Jaeger, backup định kỳ lên Google Drive, alerting Discord/Telegram. Đã kiểm thử stress test và soak test thực tế.
@@ -75,9 +75,9 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 > **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary  
 > **Quy mô:** 9 repos · 7 microservices · 1 web client · 1 mobile app client
 
-Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG. 
+Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG.
 
-Ứng dụng di động đa nền tảng (React Native/Expo) sử dụng giao diện Tailwind CSS (NativeWind) mang lại trải nghiệm mượt mà, hỗ trợ nhân viên đăng ký lịch làm việc theo tuần (Office/Remote/Nghỉ phép), quét mã QR chấm công check-in/out thời gian thực qua camera di động, quản lý danh sách công việc (Todo/Task) và nhắn tin trò chuyện nội bộ. 
+Ứng dụng di động đa nền tảng (React Native/Expo) sử dụng giao diện Tailwind CSS (NativeWind) mang lại trải nghiệm mượt mà, hỗ trợ nhân viên đăng ký lịch làm việc theo tuần (Office/Remote/Nghỉ phép), quét mã QR chấm công check-in/out thời gian thực qua camera di động, quản lý danh sách công việc (Todo/Task) và nhắn tin trò chuyện nội bộ.
 
 Hệ thống quản trị Admin cung cấp các tính năng quản lý nhân sự chuyên sâu như phê duyệt đơn đăng ký lịch làm việc (hỗ trợ duyệt hàng loạt), thống kê mật độ làm việc (Heatmap) theo ngày và tuần, cấu hình quy định chấm công/deadline và tạo mã QR chấm công động thời gian thực (giới hạn 30 giây bảo mật tối đa).
 
@@ -103,13 +103,30 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 
 ## Lê Xuân Dũng — HDG Healthcare Management
 
-> **Stack:** TypeScript (React) · Python (FastAPI)
+> **Role:** Full Stack · System Designer · BA · QA  
+> **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · Docker  
+> **Quy mô:** 4 repos · 1 frontend · 1 backend · production-ready
 
-Hệ thống quản lý sức khỏe nhân viên — hồ sơ sức khỏe, lịch khám, theo dõi tình trạng. Hạ tầng độc lập, kết nối hệ sinh thái HDG qua auth và dữ liệu nhân sự chung.
+Hệ thống quản lý sức khỏe nhân viên nội bộ cho hệ sinh thái HDG — cho phép nhân viên khai báo hồ sơ sức khỏe cá nhân, đặt lịch khám định kỳ, và theo dõi các chỉ số sức khỏe theo thời gian. Kết nối xác thực tập trung qua HDG Auth Service (JWT), đồng bộ dữ liệu nhân sự từ HDG HR Service.
 
-| Repo | Ngôn ngữ | Mô tả |
-|---|---|---|
-| *(Xuân Dũng bổ sung)* | | |
+Backend xây dựng trên **FastAPI** (Python) với cấu trúc module hóa theo domain, tích hợp **PostgreSQL** lưu trữ hồ sơ và lịch sử khám, **Redis** cache session và OTP token, tài liệu API tự động qua Swagger/OpenAPI. Frontend **React + Vite + Tailwind CSS** kết nối SSO qua HDG Ecosystem, dashboard tổng quan sức khỏe cá nhân với biểu đồ theo dõi chỉ số. Phân quyền hai vai trò: **nhân viên** (xem và cập nhật hồ sơ, đặt lịch, theo dõi cá nhân) và **admin/y tế** (quản lý lịch khám toàn công ty, phê duyệt, thống kê tổng hợp).
+
+### Repositories
+
+| Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
+|---|---|---|---|
+| **Frontend** | [Healthcare-Frontend](https://github.com/lxuandung/Healthcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
+| **Backend** | [Healthcare-Backend](https://github.com/lxuandung/Healthcare-Backend) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
+| **Infra** | [Healthcare-DB](https://github.com/lxuandung/Healthcare-DB) | SQL · Docker | Schema PostgreSQL, migration scripts, seed data, Docker Compose local dev |
+| **Docs** | [Healthcare-Docs](https://github.com/lxuandung/Healthcare-Docs) | Markdown | Tài liệu BA, ERD, API spec, use case diagram, hướng dẫn triển khai |
+
+### Tính năng chính
+
+- **Hồ sơ sức khỏe:** Lưu thông tin cá nhân, nhóm máu, tiền sử bệnh, dị ứng thuốc, ghi chú bác sĩ
+- **Đặt lịch khám:** Nhân viên tự đặt lịch khám định kỳ, admin/y tế phê duyệt, nhắc nhở qua email
+- **Theo dõi chỉ số:** Ghi nhận và biểu đồ hóa chỉ số sức khỏe theo thời gian (cân nặng, huyết áp, đường huyết, BMI…)
+- **Tích hợp HDG Ecosystem:** Đăng nhập SSO qua HDG Auth Service (JWT), đồng bộ thông tin nhân sự từ HR Service
+- **Admin dashboard:** Thống kê sức khỏe toàn công ty, quản lý lịch khám tập thể, xuất báo cáo định kỳ
 
 ---
 
