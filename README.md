@@ -71,13 +71,30 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 
 ## Lê Đình Thành — HDG Admin & HR System
 
-> **Stack:** TypeScript (Next.js · React Native) · JavaScript (Express.js)
+> **Role:** Full Stack · System Designer · BA · QA  
+> **Stack:** TypeScript (Express · React Native / Expo) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Cloudinary  
+> **Quy mô:** 8 repos · 7 microservices · 1 mobile app client
 
-Hệ thống quản trị nội bộ và nhân sự — web admin, app Android cho nhân viên, đặt lịch ca làm. Tích hợp trực tiếp backend auth/user/payment của Hải Đăng vào hệ sinh thái chung.
+Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG. 
 
-| Repo | Ngôn ngữ | Mô tả |
-|---|---|---|
-| *(Đình Thành bổ sung)* | | |
+Ứng dụng di động đa nền tảng (React Native/Expo) sử dụng giao diện Tailwind CSS (NativeWind) mang lại trải nghiệm mượt mà, hỗ trợ nhân viên đăng ký lịch làm việc theo tuần (Office/Remote/Nghỉ phép), quét mã QR chấm công check-in/out thời gian thực qua camera di động, quản lý danh sách công việc (Todo/Task) và nhắn tin trò chuyện nội bộ. 
+
+Hệ thống quản trị Admin cung cấp các tính năng quản lý nhân sự chuyên sâu như phê duyệt đơn đăng ký lịch làm việc (hỗ trợ duyệt hàng loạt), thống kê mật độ làm việc (Heatmap) theo ngày và tuần, cấu hình quy định chấm công/deadline và tạo mã QR chấm công động thời gian thực (giới hạn 30 giây bảo mật tối đa).
+
+Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập giao tiếp qua API Gateway (định tuyến, proxy WebSocket cho Socket.io và tự động gộp tài liệu Swagger API). Xử lý tác vụ gửi email OTP xác thực tài khoản bất đồng bộ thông qua RabbitMQ và Nodemailer SMTP. Quản lý trạng thái và mã xác thực bảo mật được lưu trữ trong bộ nhớ đệm Redis để tối ưu hóa hiệu năng.
+
+### Repositories
+
+| Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
+|---|---|---|---|
+| **Mobile Client** | [Nrapp](https://github.com/lethanh2006/Nrapp) | TypeScript · Tailwind CSS | Ứng dụng di động Expo/React Native cho nhân viên và admin - quản lý lịch làm việc, nhiệm vụ (Todo), chat realtime, quét QR chấm công qua camera. |
+| **Backend** | [API-GATEWAY](https://github.com/lethanh2006/API-GATEWAY) | JavaScript | API Gateway - điều phối định tuyến, xử lý proxy Socket.io chat, gộp và phục vụ tài liệu Swagger API tập trung. |
+| | [USER_SERVICE](https://github.com/lethanh2006/USER_SERVICE) | TypeScript | Dịch vụ người dùng & xác thực - đăng ký, đăng nhập, hồ sơ cá nhân (`/me`), phân quyền, xác thực 2 lớp OTP, tích hợp cache Redis. |
+| | [WORKSCHEDULE_SERVICE](https://github.com/lethanh2006/WORKSCHEDULE_SERVICE) | TypeScript | Dịch vụ lịch làm việc & chấm công - tạo mã QR check-in động (hạn 30s), ghi nhận check-in/out, quản lý và phê duyệt lịch làm việc tuần, heatmap. |
+| | [CHAT_SERVICE](https://github.com/lethanh2006/CHAT_SERVICE) | TypeScript | Dịch vụ trò chuyện thời gian thực - giao tiếp qua Socket.io, lưu trữ tin nhắn văn bản và hình ảnh tải lên qua Cloudinary. |
+| | [TODO_SERVICE](https://github.com/lethanh2006/TODO_SERVICE) | TypeScript | Dịch vụ quản lý công việc (Todo) - tạo nhiệm vụ, phân công, cập nhật trạng thái, độ ưu tiên và thời hạn. |
+| | [MAIL_SERVICE](https://github.com/lethanh2006/MAIL_SERVICE) | TypeScript | Dịch vụ gửi email tự động - tiêu thụ hàng đợi `send-otp` từ RabbitMQ, gửi email mã xác thực qua SMTP Gmail/Nodemailer. |
+| | [Logger](https://github.com/lethanh2006/Logger) | JavaScript | Dịch vụ ghi log tập trung - cung cấp API tiếp nhận log từ các microservices khác để lưu trữ file log bằng Winston (`combined.log`, `error.log`). |
 
 ---
 
