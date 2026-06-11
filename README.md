@@ -50,9 +50,9 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 |---|---|---|---|
 | **Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
-| **Golang(Server)** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Golang · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
+| **Golang (Server)** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Golang · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
 | | [dragonboy-item-service-go](https://github.com/DANG-PH/dragonboy-item-service-go) | Golang · Lua | Inventory — vật phẩm người chơi, bulk insert, UUID lookup |
-| **NestJS(Server)** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · Lua | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
+| **NestJS (Server)** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · Lua | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
 | | [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | TypeScript | Auth — OTP 2FA, Google OAuth, JWT versioning |
 | | [dragonboy-user-service](https://github.com/DANG-PH/dragonboy-user-service) | TypeScript | Player — profile, game stats, inventory, leaderboard |
 | | [dragonboy-pay-service](https://github.com/DANG-PH/dragonboy-pay-service) | TypeScript | Ví — nạp QR (VietQR/PayOS), idempotency, lịch sử giao dịch |
@@ -89,15 +89,15 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Web Client** | [adminwebnr](https://github.com/lethanh2006/adminwebnr) | TypeScript · UmiJS · Ant Design | Trang quản trị Admin (HDG Admin) - Quản lý người chơi (tra cứu, khóa/mở khóa, gửi email), quản lý tin tức (TinyMCE), quản lý game (bản đồ, NPC, NPC shop), duyệt rút tiền (cashout), và thống kê doanh thu (ApexCharts). |
+| **Web Client** | dragonboy-web-admin](https://github.com/lethanh2006/adminwebnr) | TypeScript · UmiJS · Ant Design | Trang quản trị Admin (HDG Admin) - Quản lý người chơi (tra cứu, khóa/mở khóa, gửi email), quản lý tin tức (TinyMCE), quản lý game (bản đồ, NPC, NPC shop), duyệt rút tiền (cashout), và thống kê doanh thu (ApexCharts). |
 | **Mobile Client** | [Nrapp](https://github.com/lethanh2006/Nrapp) | TypeScript · Tailwind CSS | Ứng dụng di động Expo/React Native cho nhân viên và admin - quản lý lịch làm việc, nhiệm vụ (Todo), chat realtime, quét QR chấm công qua camera. |
-| **Backend** | [API-GATEWAY](https://github.com/lethanh2006/API-GATEWAY) | JavaScript | API Gateway - điều phối định tuyến, xử lý proxy Socket.io chat, gộp và phục vụ tài liệu Swagger API tập trung. |
-| | [USER_SERVICE](https://github.com/lethanh2006/USER_SERVICE) | TypeScript | Dịch vụ người dùng & xác thực - đăng ký, đăng nhập, hồ sơ cá nhân (`/me`), phân quyền, xác thực 2 lớp OTP, tích hợp cache Redis. |
-| | [WORKSCHEDULE_SERVICE](https://github.com/lethanh2006/WORKSCHEDULE_SERVICE) | TypeScript | Dịch vụ lịch làm việc & chấm công - tạo mã QR check-in động (hạn 30s), ghi nhận check-in/out, quản lý và phê duyệt lịch làm việc tuần, heatmap. |
-| | [CHAT_SERVICE](https://github.com/lethanh2006/CHAT_SERVICE) | TypeScript | Dịch vụ trò chuyện thời gian thực - giao tiếp qua Socket.io, lưu trữ tin nhắn văn bản và hình ảnh tải lên qua Cloudinary. |
-| | [TODO_SERVICE](https://github.com/lethanh2006/TODO_SERVICE) | TypeScript | Dịch vụ quản lý công việc (Todo) - tạo nhiệm vụ, phân công, cập nhật trạng thái, độ ưu tiên và thời hạn. |
-| | [MAIL_SERVICE](https://github.com/lethanh2006/MAIL_SERVICE) | TypeScript | Dịch vụ gửi email tự động - tiêu thụ hàng đợi `send-otp` từ RabbitMQ, gửi email mã xác thực qua SMTP Gmail/Nodemailer. |
-| | [Logger](https://github.com/lethanh2006/Logger) | JavaScript | Dịch vụ ghi log tập trung - cung cấp API tiếp nhận log từ các microservices khác để lưu trữ file log bằng Winston (`combined.log`, `error.log`). |
+| **Backend** | [app-api-gateway](https://github.com/lethanh2006/API-GATEWAY) | JavaScript | API Gateway - điều phối định tuyến, xử lý proxy Socket.io chat, gộp và phục vụ tài liệu Swagger API tập trung. |
+| | [app-user-service](https://github.com/lethanh2006/USER_SERVICE) | TypeScript | Dịch vụ người dùng & xác thực - đăng ký, đăng nhập, hồ sơ cá nhân (`/me`), phân quyền, xác thực 2 lớp OTP, tích hợp cache Redis. |
+| | [app-workschedule-service](https://github.com/lethanh2006/WORKSCHEDULE_SERVICE) | TypeScript | Dịch vụ lịch làm việc & chấm công - tạo mã QR check-in động (hạn 30s), ghi nhận check-in/out, quản lý và phê duyệt lịch làm việc tuần, heatmap. |
+| | [app-chat-service](https://github.com/lethanh2006/CHAT_SERVICE) | TypeScript | Dịch vụ trò chuyện thời gian thực - giao tiếp qua Socket.io, lưu trữ tin nhắn văn bản và hình ảnh tải lên qua Cloudinary. |
+| | [app-todo-service](https://github.com/lethanh2006/TODO_SERVICE) | TypeScript | Dịch vụ quản lý công việc (Todo) - tạo nhiệm vụ, phân công, cập nhật trạng thái, độ ưu tiên và thời hạn. |
+| | [app-mail-service](https://github.com/lethanh2006/MAIL_SERVICE) | TypeScript | Dịch vụ gửi email tự động - tiêu thụ hàng đợi `send-otp` từ RabbitMQ, gửi email mã xác thực qua SMTP Gmail/Nodemailer. |
+| | [app-logger-service](https://github.com/lethanh2006/Logger) | JavaScript | Dịch vụ ghi log tập trung - cung cấp API tiếp nhận log từ các microservices khác để lưu trữ file log bằng Winston (`combined.log`, `error.log`). |
 
 ---
 
