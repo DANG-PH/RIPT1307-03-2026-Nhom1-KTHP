@@ -115,18 +115,8 @@ Backend xây dựng trên **FastAPI** (Python) với cấu trúc module hóa the
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Frontend** | [Healthcare-Frontend](https://github.com/lxuandung/Healthcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
-| **Backend** | [Healthcare-Backend](https://github.com/lxuandung/Healthcare-Backend) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
-| **Infra** | [Healthcare-DB](https://github.com/lxuandung/Healthcare-DB) | SQL · Docker | Schema PostgreSQL, migration scripts, seed data, Docker Compose local dev |
-| **Docs** | [Healthcare-Docs](https://github.com/lxuandung/Healthcare-Docs) | Markdown | Tài liệu BA, ERD, API spec, use case diagram, hướng dẫn triển khai |
-
-### Tính năng chính
-
-- **Hồ sơ sức khỏe:** Lưu thông tin cá nhân, nhóm máu, tiền sử bệnh, dị ứng thuốc, ghi chú bác sĩ
-- **Đặt lịch khám:** Nhân viên tự đặt lịch khám định kỳ, admin/y tế phê duyệt, nhắc nhở qua email
-- **Theo dõi chỉ số:** Ghi nhận và biểu đồ hóa chỉ số sức khỏe theo thời gian (cân nặng, huyết áp, đường huyết, BMI…)
-- **Tích hợp HDG Ecosystem:** Đăng nhập SSO qua HDG Auth Service (JWT), đồng bộ thông tin nhân sự từ HR Service
-- **Admin dashboard:** Thống kê sức khỏe toàn công ty, quản lý lịch khám tập thể, xuất báo cáo định kỳ
+| **Frontend** | [Healthcare-Frontend](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
+| **Backend** | [Healthcare-Backend](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
 
 ---
 
