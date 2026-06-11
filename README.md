@@ -75,7 +75,7 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 - **Web & API:** [ngocrongdark.com](https://ngocrongdark.com) · [api.ngocrongdark.com](https://api.ngocrongdark.com) · [pay.ngocrongdark.com](https://pay.ngocrongdark.com) · [download.ngocrongdark.com](https://download.ngocrongdark.com)
 - **Realtime WebSocket:** [ws.dangpham.id.vn](https://ws.dangpham.id.vn) · [ws-go.dangpham.id.vn](https://ws-go.dangpham.id.vn) — DNS trực tiếp, bypass Cloudflare để tối ưu latency game realtime 20Hz
 - **Observability & Admin tools** (HTTP Basic Auth): [grafana.ngocrongdark.com](https://grafana.ngocrongdark.com) · [data.ngocrongdark.com](https://data.ngocrongdark.com) · [postgres.ngocrongdark.com](https://postgres.ngocrongdark.com) · [redis.ngocrongdark.com](https://redis.ngocrongdark.com)
-- **Community:** [Fanpage Facebook](https://www.facebook.com/profile.php?id=61576541835732) — cộng đồng người chơi thật
+- **Community:** [Fanpage Facebook ~10k followers](https://www.facebook.com/profile.php?id=61576541835732) — cộng đồng người chơi thật
 ---
 
 ## Lê Đình Thành — HDG Admin & HR System
