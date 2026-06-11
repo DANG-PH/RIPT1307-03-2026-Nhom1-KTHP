@@ -2,7 +2,7 @@
   <img src="https://i.pinimg.com/originals/fd/91/b1/fd91b1715061efc79dbb6678aea0f9b9.gif" width="220" alt="Ngọc Rồng Online">
 </p>
 
-<h1 align="center">HDG Ecosystem — RIPT1307 Nhóm 01</h1>
+<h1 align="center">HDG Ecosystem — RIPT1307 Nhóm 01, Lớp 3</h1>
 
 <p align="center">
   Phạm Hải Đăng &nbsp;·&nbsp; Lê Đình Thành &nbsp;·&nbsp; Lê Xuân Dũng
