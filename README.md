@@ -115,7 +115,7 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 
 > **Role:** Full Stack · BA · Solution Architect<br>
 > **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · ARQ · Docker · Ngrok<br>
-> **Quy mô:** 2 repos · 1 frontend · 1 backend · ~23 bảng nghiệp vụ · production-ready
+> **Quy mô:** 2 repos · 1 frontend · 1 backend 
 
 Hệ thống quản lý sức khỏe và phòng khám doanh nghiệp nội bộ HDG — hồ sơ sức khỏe nhân viên, đặt lịch khám với bác sĩ, hồ sơ bệnh án, kê đơn, kho dược phẩm và thẻ Bảo hiểm Y tế (BHYT). Đồng bộ danh sách nhân sự với hệ sinh thái HDG qua export/import user.
 
@@ -125,8 +125,8 @@ Backend **FastAPI** (Python) kiến trúc 3 lớp Router / Service / Repository,
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **React (Client)** | [health-client](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
-| **FastAPI (Server)** | [health-server](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, ký số bệnh án SHA-256, FIFO inventory, BHYT 80/20, VietQR webhook idempotent, tích hợp HDG Auth, Swagger docs |
+| **React (Client)** | [health-client](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
+| **FastAPI (Server)** | [health-server](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python | REST API — quản lý hồ sơ sức khỏe, lịch khám, ký số bệnh án SHA-256, FIFO inventory, BHYT 80/20, VietQR webhook idempotent, tích hợp HDG Auth, Swagger docs |
 
 ---
 
