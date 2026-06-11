@@ -46,7 +46,7 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
+| **Web & Game Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
 | **Golang (Server)** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Golang · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
 | | [dragonboy-item-service-go](https://github.com/DANG-PH/dragonboy-item-service-go) | Golang · Lua | Inventory — vật phẩm người chơi, bulk insert, UUID lookup |
@@ -91,7 +91,7 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
 | **Web Client** | [dragonboy-web-admin](https://github.com/lethanh2006/adminwebnr) | TypeScript · UmiJS · Ant Design | Trang quản trị Admin (HDG Admin) - Quản lý người chơi (tra cứu, khóa/mở khóa, gửi email), quản lý tin tức (TinyMCE), quản lý game (bản đồ, NPC, NPC shop), duyệt rút tiền (cashout), và thống kê doanh thu (ApexCharts). |
-| **Mobile Client** | [Nrapp](https://github.com/lethanh2006/Nrapp) | TypeScript · Tailwind CSS | Ứng dụng di động Expo/React Native cho nhân viên và admin - quản lý lịch làm việc, nhiệm vụ (Todo), chat realtime, quét QR chấm công qua camera. |
+| **Mobile Client** | [app-client](https://github.com/lethanh2006/Nrapp) | TypeScript · Tailwind CSS | Ứng dụng di động Expo/React Native cho nhân viên và admin - quản lý lịch làm việc, nhiệm vụ (Todo), chat realtime, quét QR chấm công qua camera. |
 | **Backend** | [app-api-gateway](https://github.com/lethanh2006/API-GATEWAY) | JavaScript | API Gateway - điều phối định tuyến, xử lý proxy Socket.io chat, gộp và phục vụ tài liệu Swagger API tập trung. |
 | | [app-user-service](https://github.com/lethanh2006/USER_SERVICE) | TypeScript | Dịch vụ người dùng & xác thực - đăng ký, đăng nhập, hồ sơ cá nhân (`/me`), phân quyền, xác thực 2 lớp OTP, tích hợp cache Redis. |
 | | [app-workschedule-service](https://github.com/lethanh2006/WORKSCHEDULE_SERVICE) | TypeScript | Dịch vụ lịch làm việc & chấm công - tạo mã QR check-in động (hạn 30s), ghi nhận check-in/out, quản lý và phê duyệt lịch làm việc tuần, heatmap. |
