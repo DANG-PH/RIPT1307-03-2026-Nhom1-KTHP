@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.pinimg.com/originals/fd/91/b1/fd91b1715061efc79dbb6678aea0f9b9.gif" width="220" alt="Ngọc Rồng Online">
+  <img src="https://i.pinimg.com/originals/d3/4f/8b/d34f8bc75c2860fc863f896e883e13e8.gif" width="220" alt="Ngọc Rồng Online">
 </p>
 
 <h1 align="center">HDG Ecosystem — RIPT1307 Nhóm 01, Lớp 3</h1>
