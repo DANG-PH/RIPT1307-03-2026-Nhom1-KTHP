@@ -50,7 +50,7 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Client (NextJS · LibGDX)** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
+| **NextJS · LibGDX (Client)** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java · LibGDX | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
 | **Golang (Server)** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Golang · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
 | | [dragonboy-item-service-go](https://github.com/DANG-PH/dragonboy-item-service-go) | Golang | Inventory — vật phẩm người chơi, bulk insert, UUID lookup |
