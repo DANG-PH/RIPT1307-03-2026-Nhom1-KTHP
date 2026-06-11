@@ -34,15 +34,17 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
-> **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer
-> **Stack:** TypeScript (NestJS · Next.js) · Golang · Java (LibGDX) · Docker · Nginx · Cloudflare · AWS S3
-> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7
-> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)
+> **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer<br>
+> **Stack:** TypeScript (NestJS · Next.js) · Golang · Java (LibGDX) · Docker · Nginx · Cloudflare · AWS S3<br>
+> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7<br>
+> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)<br>
 > **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
 
-Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực qua VietQR/PayOS (webhook + idempotency), chatbot RAG (Gemini embedding + LLM, ~40% cache hit, –50% LLM cost), hạ tầng phân tán tự vận hành **3 VPS production 24/7**. Kiến trúc **14 microservices polyglot** (NestJS + Go) giao tiếp qua gRPC + event-driven (RabbitMQ / NATS / BullMQ); giao dịch liên-service đảm bảo nhất quán bằng **Saga + Outbox + Compensation** — *0% partial-failure* trên các luồng tiền và mua bán tài khoản. Bảo mật **Defense in Depth** (Cloudflare → Nginx → Gateway → App → DB), 2FA mật khẩu + OTP email, JWT versioning. CI/CD dispatch trung tâm với auto rollback (**520+ deploys, ~95% success**), observability Prometheus / Grafana / Jaeger phát hiện và xử lý **25 production incidents**, backup hằng ngày 4 AM lên Google Drive.
+**Sản phẩm.** Một **MMORPG 2D nhiều người chơi trực tuyến** (tái hiện game Ngọc Rồng Online — MMORPG Dragon Ball của Việt Nam) — **solo-build hoàn chỉnh từ game client tới hạ tầng phân tán, chạy production thật 24/7 hơn 14 tháng với người dùng và doanh thu thực**. Gồm game client Java/LibGDX (multiplayer realtime, kho đồ, chỉ số nhân vật), web cổng người chơi Next.js (shop, leaderboard, sàn mua bán tài khoản, chatbot AI), thanh toán thực qua VietQR/PayOS có webhook idempotency, và backend **14 microservices polyglot** (NestJS + Go) tự vận hành trên 3 VPS Ubuntu cluster.
 
-**Engineering highlights.** Migrate realtime engine từ NestJS/Socket.IO sang **Go raw WebSocket + Protobuf + NATS** giảm **~60% payload** và đạt tickrate 20Hz ổn định. **Dirty Flag + async batch writes** giảm **~90% DB write**, **Fire-and-Forget** tiết kiệm ~10ms latency. Đo hiệu năng thực bằng k6: **soak 1000 RPS, p99 = 234ms, 98.4% success**; stress test breaking point ~1500 RPS; capacity production-safe **700 RPS với 30% headroom**.
+**Kiến trúc.** Microservices giao tiếp qua gRPC + event-driven (RabbitMQ / NATS / BullMQ), **100+ endpoint trên 8 database** (PostgreSQL/MySQL transactional, MongoDB logging, Redis cache/lock); giao dịch liên-service nhất quán bằng **Saga + Outbox + Compensation** — *0% partial-failure* trên các luồng tiền và mua bán tài khoản. Bảo mật **Defense in Depth** (Cloudflare → Nginx → Gateway → App → DB), 2FA mật khẩu + OTP email, JWT versioning. CI/CD dispatch trung tâm với auto rollback (**520+ deploys, ~95% success**), observability Prometheus / Grafana / Jaeger phát hiện và xử lý **25 production incidents**, backup hằng ngày 4 AM lên Google Drive.
+
+**Engineering highlights.** Migrate realtime engine từ NestJS/Socket.IO sang **Go raw WebSocket + Protobuf + NATS** giảm **~60% payload**, đạt tickrate 20Hz ổn định. **Dirty Flag + async batch writes** giảm **~90% DB write**, **Fire-and-Forget** tiết kiệm ~10ms latency, chatbot **RAG (Gemini)** với cache đạt ~40% hit rate, **–50% chi phí LLM**. Đo hiệu năng thực bằng k6: **soak 1000 RPS, p99 = 234ms, 98.4% success**; stress test breaking point ~1500 RPS; capacity production-safe **700 RPS với 30% headroom**.
 
 ### Repositories
 
@@ -74,8 +76,8 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 
 ## Lê Đình Thành — HDG Admin & HR System
 
-> **Role:** Full Stack · BA · Solution Architect
-> **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary
+> **Role:** Full Stack · BA · Solution Architect<br>
+> **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary<br>
 > **Quy mô:** 9 repos · 7 microservices · 1 web client · 1 mobile app client
 
 Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG.
@@ -106,8 +108,8 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 
 ## Lê Xuân Dũng — HDG Healthcare Management
 
-> **Role:** Full Stack · BA · Solution Architect
-> **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · ARQ · Docker · Ngrok
+> **Role:** Full Stack · BA · Solution Architect<br>
+> **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · ARQ · Docker · Ngrok<br>
 > **Quy mô:** 2 repos · 1 frontend · 1 backend · ~23 bảng nghiệp vụ · production-ready
 
 Hệ thống quản lý sức khỏe và phòng khám doanh nghiệp nội bộ HDG — hồ sơ sức khỏe nhân viên, đặt lịch khám với bác sĩ, hồ sơ bệnh án, kê đơn, kho dược phẩm và thẻ Bảo hiểm Y tế (BHYT). Đồng bộ danh sách nhân sự với hệ sinh thái HDG qua export/import user.
