@@ -53,7 +53,7 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 | **Web & Game Client** | [dragonboy-web](https://github.com/DANG-PH/dragonboy-web) | TypeScript · NextJS · Tailwind CSS | Web platform — shop, account market, leaderboard, chat, ví, AI chatbot |
 | | [ngoc-rong-online](https://github.com/DANG-PH/ngoc-rong-online) | Java · LibGDX | Game client — multiplayer realtime, vật phẩm, nạp thẻ |
 | **Golang (Server)** | [dragonboy-game-service-go](https://github.com/DANG-PH/dragonboy-game-service-go) | Golang · Lua | Realtime engine — WebSocket, binary protocol, NATS, 20Hz tick |
-| | [dragonboy-item-service-go](https://github.com/DANG-PH/dragonboy-item-service-go) | Golang · Lua | Inventory — vật phẩm người chơi, bulk insert, UUID lookup |
+| | [dragonboy-item-service-go](https://github.com/DANG-PH/dragonboy-item-service-go) | Golang | Inventory — vật phẩm người chơi, bulk insert, UUID lookup |
 | **NestJS (Server)** | [dragonboy-api-gateway](https://github.com/DANG-PH/dragonboy-api-gateway) | TypeScript · Lua | API Gateway — routing, JWT, rate limiting, circuit breaker · kèm tài liệu BA |
 | | [dragonboy-auth-service](https://github.com/DANG-PH/dragonboy-auth-service) | TypeScript | Auth — OTP 2FA, Google OAuth, JWT versioning |
 | | [dragonboy-user-service](https://github.com/DANG-PH/dragonboy-user-service) | TypeScript | Player — profile, game stats, inventory, leaderboard |
