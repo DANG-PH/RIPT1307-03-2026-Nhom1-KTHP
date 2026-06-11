@@ -116,8 +116,8 @@ Backend xây dựng trên **FastAPI** (Python) với cấu trúc module hóa the
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
-| **Frontend** | [Healthcare-Frontend](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
-| **Backend** | [Healthcare-Backend](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
+| **Frontend** | [health-client](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
+| **Backend** | [health-server](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
 
 ---
 
