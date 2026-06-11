@@ -36,13 +36,13 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 > **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer<br>
 > **Stack:** TypeScript (NestJS · Next.js) · Golang · Java (LibGDX) · Docker · Nginx · Cloudflare · AWS S3<br>
-> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7<br>
+> **Quy mô:** 18 repos · 14 microservices · 1000+ commits · 49 app instances · 3 VPS · production 24/7<br>
 > **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)<br>
 > **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
 
-**Sản phẩm.** Một **Game MMORPG 2D nhiều người chơi trực tuyến** (tái hiện game Ngọc Rồng Online — MMORPG Dragon Ball của Việt Nam) — **solo-build hoàn chỉnh từ game client tới hạ tầng phân tán, chạy production thật 24/7 hơn 14 tháng với người dùng và doanh thu thực**. Gồm game client Java/LibGDX (multiplayer realtime, kho đồ, chỉ số nhân vật), web cổng người chơi Next.js (shop, leaderboard, sàn mua bán tài khoản, chatbot AI), thanh toán thực qua VietQR/PayOS có webhook idempotency, và backend **14 microservices polyglot** (NestJS + Go) tự vận hành trên 3 VPS Ubuntu cluster.
+**Sản phẩm.** Một **Game MMORPG 2D nhiều người chơi trực tuyến** (tái hiện game Ngọc Rồng Online — MMORPG Dragon Ball của Việt Nam) — **solo-build hoàn chỉnh từ game client tới hạ tầng phân tán, chạy production thật 24/7 hơn 14 tháng với người dùng và doanh thu thực, cộng đồng ~10k followers trên Facebook**. Gồm game client Java/LibGDX (multiplayer realtime, kho đồ, chỉ số nhân vật), web cổng người chơi Next.js (shop, leaderboard, sàn mua bán tài khoản, chatbot AI), thanh toán thực qua VietQR/PayOS có webhook idempotency, và backend **14 microservices polyglot** (NestJS + Go) tự vận hành trên 3 VPS Ubuntu cluster.
 
-**Kiến trúc.** Microservices giao tiếp qua gRPC + event-driven (RabbitMQ / NATS / BullMQ), **100+ endpoint trên 8 database** (PostgreSQL/MySQL transactional, MongoDB logging, Redis cache/lock); giao dịch liên-service nhất quán bằng **Saga + Outbox + Compensation** — *0% partial-failure* trên các luồng tiền và mua bán tài khoản. Bảo mật **Defense in Depth** (Cloudflare → Nginx → Gateway → App → DB), 2FA mật khẩu + OTP email, JWT versioning. CI/CD dispatch trung tâm với auto rollback (**520+ deploys, ~95% success**), observability Prometheus / Grafana / Jaeger phát hiện và xử lý **25 production incidents**, backup hằng ngày 4 AM lên Google Drive và Github Repo.
+**Kiến trúc.** Microservices giao tiếp qua gRPC + event-driven (RabbitMQ / NATS / BullMQ), **100+ endpoint trên 8 database** (PostgreSQL/MySQL transactional, MongoDB logging, Redis cache/lock); giao dịch liên-service nhất quán bằng **Saga + Outbox + Compensation** — *0% partial-failure* trên các luồng tiền và mua bán tài khoản; webhook thanh toán **VietQR/PayOS đạt 100% accuracy** qua ~100 test case integration. Bảo mật **Defense in Depth** (Cloudflare → Nginx → Gateway → App → DB), 2FA mật khẩu + OTP email, JWT versioning. CI/CD dispatch trung tâm với auto rollback (**520+ deploys, ~95% success**), observability Prometheus / Grafana / Jaeger phát hiện và xử lý **25 production incidents**, backup hằng ngày 4 AM lên Google Drive và Github Repo.
 
 **Engineering highlights.** Migrate realtime engine từ NestJS/Socket.IO sang **Go raw WebSocket + Protobuf + NATS** giảm **~60% payload**, đạt tickrate 20Hz ổn định. **Dirty Flag + async batch writes** giảm **~90% DB write**, **Fire-and-Forget** tiết kiệm ~10ms latency, chatbot **RAG (Gemini)** với cache đạt ~40% hit rate, **–50% chi phí LLM**. Đo hiệu năng thực bằng k6: **soak 1000 RPS, p99 = 234ms, 98.4% success**; stress test breaking point ~1500 RPS; capacity production-safe **700 RPS với 30% headroom**.
 
@@ -71,11 +71,12 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 
 **Production deployment**
- 
+
 - **Web & API:** [ngocrongdark.com](https://ngocrongdark.com) · [api.ngocrongdark.com](https://api.ngocrongdark.com) · [pay.ngocrongdark.com](https://pay.ngocrongdark.com) · [download.ngocrongdark.com](https://download.ngocrongdark.com)
 - **Realtime WebSocket:** [ws.dangpham.id.vn](https://ws.dangpham.id.vn) · [ws-go.dangpham.id.vn](https://ws-go.dangpham.id.vn) — DNS trực tiếp, bypass Cloudflare để tối ưu latency game realtime 20Hz
 - **Observability & Admin tools** (HTTP Basic Auth): [grafana.ngocrongdark.com](https://grafana.ngocrongdark.com) · [data.ngocrongdark.com](https://data.ngocrongdark.com) · [postgres.ngocrongdark.com](https://postgres.ngocrongdark.com) · [redis.ngocrongdark.com](https://redis.ngocrongdark.com)
 - **Community:** [Fanpage Facebook ~10k followers](https://www.facebook.com/profile.php?id=61576541835732) — cộng đồng người chơi thật
+
 ---
 
 ## Lê Đình Thành — HDG Admin & HR System
