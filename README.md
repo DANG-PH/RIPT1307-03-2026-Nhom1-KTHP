@@ -35,7 +35,7 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
 > **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer  
-> **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare · AWS S3
+> **Stack:** TypeScript (NestJS · Next.js) · Go · Java (LibGDX) · Docker · Nginx · Cloudflare
 > **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7  
 > **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)  
 > **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
