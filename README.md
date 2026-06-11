@@ -71,7 +71,7 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 
 ## Lê Đình Thành — HDG Admin & HR System
 
-> **Role:** Full Stack · System Designer · BA · QA  
+> **Role:** Full Stack · BA · Solution Architect
 > **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary  
 > **Quy mô:** 9 repos · 7 microservices · 1 web client · 1 mobile app client
 
@@ -103,7 +103,7 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 
 ## Lê Xuân Dũng — HDG Healthcare Management
 
-> **Role:** Full Stack · System Designer · BA · QA  
+> **Role:** Full Stack · BA · Solution Architect
 > **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · Docker  
 > **Quy mô:** 4 repos · 1 frontend · 1 backend · production-ready
 
