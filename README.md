@@ -42,8 +42,6 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực tế qua VietQR/PayOS (webhook + idempotency), chatbot RAG hỏi đáp tài liệu game (Gemini embedding + LLM), và hạ tầng phân tán tự vận hành trên 3 VPS. Kiến trúc microservices 14 service giao tiếp qua gRPC + event-driven (RabbitMQ), giao dịch liên-service đảm bảo nhất quán bằng Saga + Outbox Pattern. Bảo mật theo mô hình Defense in Depth (Cloudflare → Nginx → API Gateway → App → DB), xác thực hai lớp (mật khẩu + OTP email), JWT versioning. CI/CD tự động qua YAML với health check + auto rollback, monitoring Prometheus/Grafana, distributed tracing Jaeger, backup định kỳ lên Google Drive, alerting Discord/Telegram. Đã kiểm thử stress test và soak test thực tế.
 
-**Production:** [ngocrongdark.com](https://ngocrongdark.com) · [api.ngocrongdark.com](https://api.ngocrongdark.com) · [download.ngocrongdark.com](https://download.ngocrongdark.com) · [data.ngocrongdark.com](https://data.ngocrongdark.com) · [redis.ngocrongdark.com](https://redis.ngocrongdark.com) · [grafana.ngocrongdark.com](https://grafana.ngocrongdark.com)
-
 ### Repositories
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
@@ -66,6 +64,9 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 | | [dragonboy-nginx-service](https://github.com/DANG-PH/dragonboy-nginx-service) | Shell | Load balancer, reverse proxy, SSL, Docker Compose |
 | | [dragonboy-db-backups](https://github.com/DANG-PH/dragonboy-db-backups) | SQL | Backup tự động 4 AM — MySQL, PostgreSQL, MongoDB, Redis |
 | | [dragonboy-deploy-scripts](https://github.com/DANG-PH/dragonboy-deploy-scripts) | Shell | Bootstrap VPS mới — Node.js, Go, PM2, UFW, swap, multi-service setup |
+
+
+**Production:** [ngocrongdark.com](https://ngocrongdark.com) · [api.ngocrongdark.com](https://api.ngocrongdark.com) · [download.ngocrongdark.com](https://download.ngocrongdark.com) · [data.ngocrongdark.com](https://data.ngocrongdark.com) · [redis.ngocrongdark.com](https://redis.ngocrongdark.com) · [grafana.ngocrongdark.com](https://grafana.ngocrongdark.com)
 
 ---
 
