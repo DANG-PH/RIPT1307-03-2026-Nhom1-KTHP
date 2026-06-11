@@ -34,13 +34,15 @@ Thay vì làm chung một sản phẩm, mỗi thành viên phát triển **một
 
 ## Phạm Hải Đăng — Ngọc Rồng Online Platform
 
-> **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer  
+> **Role:** Full Stack · Solution Architect · BA · DBA · DevSecOps · SRE · QA · Game Developer · Technical Writer
 > **Stack:** TypeScript (NestJS · Next.js) · Golang · Java (LibGDX) · Docker · Nginx · Cloudflare · AWS S3
-> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7  
-> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)  
+> **Quy mô:** 18 repos · 14 microservices · 49 app instances · 3 VPS · production 24/7
+> **Tài liệu BA:** [docs/architecture.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/architecture.md)
 > **Tài liệu QA:** [docs/metrics.md](https://github.com/DANG-PH/dragonboy-api-gateway/blob/master/docs/metrics.md) — stress test & soak test, breaking point ~1500 RPS, capacity analysis
 
-Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực tế qua VietQR/PayOS (webhook + idempotency), chatbot RAG hỏi đáp tài liệu game (Gemini embedding + LLM), và hạ tầng phân tán tự vận hành trên 3 VPS. Kiến trúc microservices 14 service giao tiếp qua gRPC + event-driven (RabbitMQ), giao dịch liên-service đảm bảo nhất quán bằng Saga + Outbox Pattern. Bảo mật theo mô hình Defense in Depth (Cloudflare → Nginx → API Gateway → App → DB), xác thực hai lớp (mật khẩu + OTP email), JWT versioning. CI/CD tự động qua YAML với health check + auto rollback, monitoring Prometheus/Grafana, distributed tracing Jaeger, backup định kỳ lên Google Drive, alerting Discord/Telegram. Đã kiểm thử stress test và soak test thực tế.
+Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platform Next.js, thanh toán thực qua VietQR/PayOS (webhook + idempotency), chatbot RAG (Gemini embedding + LLM, ~40% cache hit, –50% LLM cost), hạ tầng phân tán tự vận hành **3 VPS production 24/7**. Kiến trúc **14 microservices polyglot** (NestJS + Go) giao tiếp qua gRPC + event-driven (RabbitMQ / NATS / BullMQ); giao dịch liên-service đảm bảo nhất quán bằng **Saga + Outbox + Compensation** — *0% partial-failure* trên các luồng tiền và mua bán tài khoản. Bảo mật **Defense in Depth** (Cloudflare → Nginx → Gateway → App → DB), 2FA mật khẩu + OTP email, JWT versioning. CI/CD dispatch trung tâm với auto rollback (**520+ deploys, ~95% success**), observability Prometheus / Grafana / Jaeger phát hiện và xử lý **25 production incidents**, backup hằng ngày 4 AM lên Google Drive.
+
+**Engineering highlights.** Migrate realtime engine từ NestJS/Socket.IO sang **Go raw WebSocket + Protobuf + NATS** giảm **~60% payload** và đạt tickrate 20Hz ổn định. **Dirty Flag + async batch writes** giảm **~90% DB write**, **Fire-and-Forget** tiết kiệm ~10ms latency. Đo hiệu năng thực bằng k6: **soak 1000 RPS, p99 = 234ms, 98.4% success**; stress test breaking point ~1500 RPS; capacity production-safe **700 RPS với 30% headroom**.
 
 ### Repositories
 
@@ -73,7 +75,7 @@ Tái hiện MMORPG Ngọc Rồng Online — game client Java/LibGDX, web platfor
 ## Lê Đình Thành — HDG Admin & HR System
 
 > **Role:** Full Stack · BA · Solution Architect
-> **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary  
+> **Stack:** TypeScript (Express · React Native / Expo · UmiJS) · JavaScript (Express) · MongoDB · Redis · RabbitMQ · Socket.IO · Tailwind CSS (NativeWind) · Ant Design v5 · Cloudinary
 > **Quy mô:** 9 repos · 7 microservices · 1 web client · 1 mobile app client
 
 Hệ thống quản lý nội bộ và nhân sự tích hợp trực tiếp vào hệ sinh thái chung HDG.
@@ -105,19 +107,19 @@ Kiến trúc backend phân tán (Microservices) gồm 7 dịch vụ độc lập
 ## Lê Xuân Dũng — HDG Healthcare Management
 
 > **Role:** Full Stack · BA · Solution Architect
-> **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · Docker  
-> **Quy mô:** 4 repos · 1 frontend · 1 backend · production-ready
+> **Stack:** TypeScript (React · Vite) · Python (FastAPI) · PostgreSQL · Redis · ARQ · Docker · Ngrok
+> **Quy mô:** 2 repos · 1 frontend · 1 backend · ~23 bảng nghiệp vụ · production-ready
 
-Hệ thống quản lý sức khỏe nhân viên nội bộ cho hệ sinh thái HDG — cho phép nhân viên khai báo hồ sơ sức khỏe cá nhân, đặt lịch khám định kỳ, và theo dõi các chỉ số sức khỏe theo thời gian. Kết nối xác thực tập trung qua HDG Auth Service (JWT), đồng bộ dữ liệu nhân sự từ HDG HR Service.
+Hệ thống quản lý sức khỏe và phòng khám doanh nghiệp nội bộ HDG — hồ sơ sức khỏe nhân viên, đặt lịch khám với bác sĩ, hồ sơ bệnh án, kê đơn, kho dược phẩm và thẻ Bảo hiểm Y tế (BHYT). Đồng bộ danh sách nhân sự với hệ sinh thái HDG qua export/import user.
 
-Backend xây dựng trên **FastAPI** (Python) với cấu trúc module hóa theo domain, tích hợp **PostgreSQL** lưu trữ hồ sơ và lịch sử khám, **Redis** cache session và OTP token, tài liệu API tự động qua Swagger/OpenAPI. Frontend **React + Vite + Tailwind CSS** kết nối SSO qua HDG Ecosystem, dashboard tổng quan sức khỏe cá nhân với biểu đồ theo dõi chỉ số. Phân quyền hai vai trò: **nhân viên** (xem và cập nhật hồ sơ, đặt lịch, theo dõi cá nhân) và **admin/y tế** (quản lý lịch khám toàn công ty, phê duyệt, thống kê tổng hợp).
+Backend **FastAPI** (Python) kiến trúc 3 lớp Router / Service / Repository, **PostgreSQL** (SQLAlchemy + Alembic), **Redis** rate-limit + **ARQ** worker hàng đợi tác vụ nền, thanh toán **VietQR + webhook HDBank** idempotent (SELECT FOR UPDATE + Regex match chống cộng tiền hai lần khi cổng retry), hoàn tiền tự động qua VietQR refund. Điểm kỹ thuật nổi bật: **Pessimistic Lock** (`with_for_update`) chống Race Condition khi nhiều bệnh nhân tranh slot khám; **FIFO inventory** xuất thuốc theo hạn dùng kèm Batch Traceability cho rollback chính xác; **Digital Signature SHA-256** ký số hồ sơ bệnh án chống chối bỏ (Non-repudiation); tính giảm trừ **BHYT 80/20** ngay từ tầng billing với Price Snapshot bảo toàn lịch sử kế toán. Frontend **React + Vite + Tailwind** SSO HDG, phân quyền 2 vai trò bệnh nhân / admin y tế, dashboard biểu đồ theo dõi chỉ số (BMI, huyết áp, đường huyết).
 
 ### Repositories
 
 | Nhóm | Repo | Ngôn ngữ | Mô tả ngắn |
 |---|---|---|---|
 | **Frontend** | [health-client](https://github.com/DungLe0102/Healtcare-Frontend) | TypeScript · React · Vite · Tailwind CSS | Web client — dashboard sức khỏe cá nhân, đặt lịch khám, lịch sử khám bệnh, khai báo & cập nhật hồ sơ sức khỏe, biểu đồ theo dõi chỉ số |
-| **Backend** | [health-server](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, theo dõi chỉ số (BMI, huyết áp, đường huyết…), tích hợp HDG Auth, Swagger docs |
+| **Backend** | [health-server](https://github.com/DungLe0102/FASTAPI-HEALTHCARE) | Python · FastAPI · PostgreSQL · Redis | REST API — quản lý hồ sơ sức khỏe, lịch khám, ký số bệnh án SHA-256, FIFO inventory, BHYT 80/20, VietQR webhook idempotent, tích hợp HDG Auth, Swagger docs |
 
 ---
 
