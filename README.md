@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://scontent.fhan5-11.fna.fbcdn.net/v/t39.30808-6/710755300_122170238270884727_6190704870126556890_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1024&ctp=s1024x1024&_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFIGRatPMAioz4BLimRml-hFoaCmbJ-Q3cWhoKZsn5DdwgOBoHcImJgasvKVQZbYMF55Tivs69_i2VI5mJBlsaX&_nc_ohc=P71SsxRai5YQ7kNvwE833-J&_nc_oc=AdqOnalgtTopxh_-yPR36DCtHMKdTSmPL7-l-CTZn6HvQUK_72Gfd9qXfgtL7PrTVKQ&_nc_zt=23&_nc_ht=scontent.fhan5-11.fna&_nc_gid=UMb5gpgbprh28dWYrDFs6A&_nc_ss=7b2a8&oh=00_Af-xmlZvIFT82FLXe7cT0erjaBTsAxIkCHYAmRSl8T2Vxg&oe=6A2FFF73" width="220" alt="Ngọc Rồng Online">
+  <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/722408523_1012012048242429_5382682113467205752_n.jpg?stp=dst-jpg_tt6&cstp=mx350x350&ctp=s350x350&_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEm4z1AYdtChrmkL0eb-dOwKs93keUfCoYqz3eR5R8KhsoxqXxOkNpwEIC6YUiKx3na4A26_IPBu17h-vnIyDKk&_nc_ohc=of258jfTkbMQ7kNvwHasYtf&_nc_oc=Adq9VLqe95fMVW-Bg62X1CBTnLnytsDzY12TXLXPybVrdDgj5cAVpmJPpY9xjsZRe48&_nc_zt=23&_nc_ht=scontent.fhan5-8.fna&_nc_gid=tp_RUD7xUebuV3JFUFkfDA&_nc_ss=7b2a8&oh=00_Af8J3OuJ1HOuIx6tmcIV7wbi7I-ZzzPn1bwkgU5LjPHGSA&oe=6A2FF314" width="220" alt="Ngọc Rồng Online">
 </p>
 
 <h1 align="center">HDG Ecosystem — RIPT1307 Nhóm 01, Lớp 3</h1>
